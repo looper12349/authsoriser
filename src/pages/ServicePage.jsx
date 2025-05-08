@@ -36,7 +36,7 @@ const ServicePage = () => {
         <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full">
           {/* Decorative background elements */}
           <div className="absolute inset-0 bg-repeat-x bg-center hidden md:block" 
-               style={{ backgroundImage: "url('/src/assets/images/database.gif')" }}></div>
+               style={{ backgroundImage: "url('/assets/images/database.gif')" }}></div>
           
           {/* Mobile background with gradient */}
           <div className="absolute inset-0 md:hidden bg-gradient-to-br from-blue-800 to-blue-900 opacity-60"></div>
@@ -222,21 +222,21 @@ const ServicePage = () => {
             slides={[
               <SlideCard
                 key="slide1"
-                image="/src/assets/images/googlecloud.png"
+                image="/assets/images/googlecloud.png"
                 title="Google Cloud Migrations"
                 description="Move your infrastructure seamlessly to Google Cloud with our expert migration services. We ensure zero downtime and maximum efficiency."
                 path="/services/google-cloud-migrations"
               />,
               <SlideCard
                 key="slide2"
-                image="/src/assets/images/smartworkspace.png"
+                image="/assets/images/smartworkspace.png"
                 title="Smart Workspace"
                 description="Transform your workspace with Google's suite of collaboration tools. Boost productivity and enable team communication."
                 path="/services/smart-workspace"
               />,
               <SlideCard
                 key="slide3"
-                image="/src/assets/images/realtime.png"
+                image="/assets/images/realtime.png"
                 title="Real-time Permission Insights"
                 description="Leverage the power of artificial intelligence to gain insights and automate processes for your business."
                 path="/services/real-time-permission-insights"

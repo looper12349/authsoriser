@@ -122,7 +122,7 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero Section - modern office design with overlay */}
-      <section className="relative h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center" style={{ backgroundImage: 'url(/src/assets/images/contact-hero.jpg)' }}>
+      <section className="relative h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center" style={{ backgroundImage: 'url(/assets/images/contact-hero.jpg)' }}>
         {/* Dark overlay with gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/50"></div>
         

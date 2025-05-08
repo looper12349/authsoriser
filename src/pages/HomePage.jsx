@@ -63,7 +63,7 @@ const HomePage = () => {
             <div className="lg:w-1/2">
               <div className="relative">
                 <img 
-                  src="/src/assets/images/Google_Workspace.png" 
+                  src="/assets/images/Google_Workspace.png" 
                   alt="Google Workspace" 
                   className="rounded-lg w-full max-w-lg mx-auto lg:mx-0 lg:ml-auto"
                 />
@@ -81,21 +81,21 @@ const HomePage = () => {
             slides={[
               <SlideCard
                 key="slide1"
-                image="/src/assets/images/googlecloud.png"
+                image="/assets/images/googlecloud.png"
                 title="Google Cloud Migrations"
                 description="Move your infrastructure seamlessly to Google Cloud with our expert migration services. We ensure zero downtime and maximum efficiency."
                 path="/services/google-cloud-migrations"
               />,
               <SlideCard
                 key="slide2"
-                image="/src/assets/images/smartworkspace.png"
+                image="/assets/images/smartworkspace.png"
                 title="Smart Workspace"
                 description="Transform your workspace with Google's suite of collaboration tools. Boost productivity and enable team communication."
                 path="/services/smart-workspace"
               />,
               <SlideCard
                 key="slide3"
-                image="/src/assets/images/realtime.png"
+                image="/assets/images/realtime.png"
                 title="Real-time Permission Insights"
                 description="Leverage the power of artificial intelligence to gain insights and automate processes for your business."
                 path="/services/real-time-permission-insights"
@@ -189,7 +189,7 @@ const HomePage = () => {
               </div>
               <div className="md:w-1/2 max-w-lg">
                 <img 
-                  src="/src/assets/images/24-7-managed-services.png" 
+                  src="/assets/images/24-7-managed-services.png" 
                   alt="24/7 Managed Services" 
                   className="w-full h-auto rounded-lg"
                 />
@@ -200,7 +200,7 @@ const HomePage = () => {
             <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 shadow-lg rounded-2xl  pr-8">
               <div className="md:w-1/2 max-w-lg">
                 <img 
-                  src="/src/assets/images/cloud-optimization.png" 
+                  src="/assets/images/cloud-optimization.png" 
                   alt="Cloud Optimization" 
                   className="w-full h-auto rounded-lg "
                 />
@@ -241,7 +241,7 @@ const HomePage = () => {
               </div>
               <div className="md:w-1/2 max-w-lg">
                 <img 
-                  src="/src/assets/images/technical-enablement.png" 
+                  src="/assets/images/technical-enablement.png" 
                   alt="Technical Enablement" 
                   className="w-full h-auto rounded-lg"
                 />
@@ -261,42 +261,42 @@ const HomePage = () => {
             <div className="relative overflow-hidden">
               <div className="animate-marquee flex items-center space-x-20 whitespace-nowrap py-6" style={{ animationDuration: '15s' }}>
                 <img 
-                  src="/src/assets/images/google.png" 
+                  src="/assets/images/google.png" 
                   alt="Google" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/microsoft.png" 
+                  src="/assets/images/microsoft.png" 
                   alt="Microsoft" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/github.png" 
+                  src="/assets/images/github.png" 
                   alt="GitHub" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/slack.png" 
+                  src="/assets/images/slack.png" 
                   alt="Slack" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/google.png" 
+                  src="/assets/images/google.png" 
                   alt="Google" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/microsoft.png" 
+                  src="/assets/images/microsoft.png" 
                   alt="Microsoft" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/github.png" 
+                  src="/assets/images/github.png" 
                   alt="GitHub" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
                 <img 
-                  src="/src/assets/images/slack.png" 
+                  src="/assets/images/slack.png" 
                   alt="Slack" 
                   className="h-12 w-24 object-contain filter grayscale brightness-0 opacity-75" 
                 />
@@ -311,7 +311,7 @@ const HomePage = () => {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/src/assets/images/home-contact.png" 
+            src="/assets/images/home-contact.png" 
             alt="Contact Background" 
             className="w-full h-full object-cover" 
           />

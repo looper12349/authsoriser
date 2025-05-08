@@ -1,6 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Helper function to map Tailwind color classes to actual color values
+const getTailwindColor = (colorClass) => {
+  const colorMap = {
+    'red-50': '#fef2f2',
+    'red-100': '#fee2e2',
+    'red-200': '#fecaca',
+    'red-300': '#fca5a5',
+    'red-400': '#f87171',
+    'red-500': '#ef4444',
+    'red-600': '#dc2626',
+    'blue-50': '#eff6ff',
+    'blue-100': '#dbeafe',
+    'blue-200': '#bfdbfe',
+    'blue-300': '#93c5fd',
+    'blue-400': '#60a5fa',
+    'blue-500': '#3b82f6',
+    'blue-600': '#2563eb',
+    'blue-700': '#1d4ed8',
+    'blue-800': '#1e40af',
+    'blue-900': '#1e3a8a'
+  };
+  
+  return colorMap[colorClass] || '#fecaca'; // Default to red-200 if color not found
+};
+
 /**
  * A customizable gradient ring component that can be used as a decorative element
  * @param {Object} props - Component props
@@ -54,8 +79,13 @@ const GradientRing = ({
     <div className={`${className} absolute ${position} overflow-visible`} style={{ zIndex }}>
       {/* Main outer ring */}
       <div 
-        className={`absolute rounded-full bg-gradient-to-br from-${fromColor} to-${toColor} opacity-${opacity} ${transform}`}
-        style={{ width: size, height: size }}
+        className={`absolute rounded-full ${transform}`}
+        style={{ 
+          width: size, 
+          height: size, 
+          background: `linear-gradient(to bottom right, ${getTailwindColor(fromColor)}, ${getTailwindColor(toColor)})`,
+          opacity: opacity / 100
+        }}
       >
         {/* Inner circle to create ring effect */}
         <div 
@@ -67,12 +97,14 @@ const GradientRing = ({
       {/* Second ring if multipleRings is true */}
       {multipleRings && (
         <div 
-          className={`absolute rounded-full bg-gradient-to-tr from-${fromColor} to-${toColor} opacity-${opacity} ${transform}`}
+          className={`absolute rounded-full ${transform}`}
           style={{ 
             width: secondRingSize, 
             height: secondRingSize,
             top: '60%',
-            left: '20%'
+            left: '20%',
+            background: `linear-gradient(to top right, ${getTailwindColor(fromColor)}, ${getTailwindColor(toColor)})`,
+            opacity: opacity / 100
           }}
         >
           <div 

@@ -38,13 +38,13 @@ const Navbar = () => {
             <Link to="/" className="flex items-center">
               {scrolled ? (
                 <img 
-                  src="/src/assets/images/logo-black.png" 
+                  src="/assets/images/logo-black.png" 
                   alt="Authsoriser" 
                   className="h-8 transition-transform duration-300 transform hover:scale-110"
                 />
               ) : (
                 <img 
-                src="/src/assets/images/logo.png" 
+                src="/assets/images/logo.png" 
                 alt="Authsoriser" 
                 className="h-8 transition-transform duration-300 transform hover:scale-110"
               />

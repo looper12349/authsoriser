@@ -13,7 +13,7 @@ const Footer = () => {
             <Link to="/" className="inline-block">
               <img
                 className="h-10 w-auto"
-                src="/src/assets/images/logo.png"
+                src="/assets/images/logo.png"
                 alt="Authsoriser"
               />
             </Link>
