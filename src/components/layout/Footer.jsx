@@ -1,9 +1,170 @@
 import { Link } from 'react-router-dom';
 import { navData } from '../../data/navData';
+import { useEffect, useRef } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const mapRef = useRef(null);
   
+  // Initialize Google Maps
+  useEffect(() => {
+    // Load Google Maps API script
+    const loadGoogleMapsScript = () => {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBGixKMw0bYA6maAItO7IhqpirrVLyX_lQ&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      window.initMap = initMap;
+      document.head.appendChild(script);
+    };
+
+    // Initialize the map
+    const initMap = () => {
+      if (!mapRef.current) return;
+      
+      // Create map centered between the two locations
+      const map = new window.google.maps.Map(mapRef.current, {
+        zoom: 3,
+        center: { lat: 48.8583, lng: -97.2264 }, // Center point between Wyoming and Calgary
+        styles: [
+          {
+            "elementType": "geometry",
+            "stylers": [{"color": "#212121"}]
+          },
+          {
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#757575"}]
+          },
+          {
+            "elementType": "labels.text.stroke",
+            "stylers": [{"color": "#212121"}]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{"color": "#757575"}]
+          },
+          {
+            "featureType": "administrative.country",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#9e9e9e"}]
+          },
+          {
+            "featureType": "administrative.locality",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#bdbdbd"}]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#757575"}]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{"color": "#181818"}]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#616161"}]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [{"color": "#2c2c2c"}]
+          },
+          {
+            "featureType": "road",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#8a8a8a"}]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [{"color": "#373737"}]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [{"color": "#3c3c3c"}]
+          },
+          {
+            "featureType": "road.highway.controlled_access",
+            "elementType": "geometry",
+            "stylers": [{"color": "#4e4e4e"}]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{"color": "#000000"}]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [{"color": "#3d3d3d"}]
+          }
+        ]
+      });
+
+      // Add markers for offices
+      const locations = [
+        {
+          position: { lat: 41.1399, lng: -104.8202 }, // Cheyenne, WY
+          title: "Cheyenne, WY, USA",
+          label: "A"
+        },
+        {
+          position: { lat: 51.0447, lng: -114.0719 }, // Calgary, Alberta
+          title: "Calgary, Alberta, Canada",
+          label: "B"
+        }
+      ];
+
+      // Create markers with red color
+      locations.forEach(location => {
+        const marker = new window.google.maps.Marker({
+          position: location.position,
+          map: map,
+          title: location.title,
+          label: {
+            text: location.label,
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '10px'
+          },
+          icon: {
+            path: window.google.maps.SymbolPath.CIRCLE,
+            fillColor: '#EF4444', // Tailwind red-500
+            fillOpacity: 1,
+            strokeColor: '#ffffff',
+            strokeWeight: 1,
+            scale: 10
+          }
+        });
+
+        // Add info window with black text
+        const infoWindow = new window.google.maps.InfoWindow({
+          content: `<div style="color: #000000; padding: 8px;"><strong>${location.title}</strong></div>`
+        });
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    };
+
+    loadGoogleMapsScript();
+
+    // Cleanup
+    return () => {
+      window.initMap = null;
+      const script = document.querySelector('script[src*="maps.googleapis.com/maps/api"]');
+      if (script) {
+        script.remove();
+      }
+    };
+  }, []);
+
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto pt-16 pb-8 px-4 sm:px-6 lg:px-8">
@@ -18,31 +179,19 @@ const Footer = () => {
               />
             </Link>
             
-            {/* Google Maps Embed */}
-            <div className="rounded-lg overflow-hidden relative w-full h-[260px] border border-gray-700">
-              <iframe 
-                title="Authsoriser Office Locations"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.552656376924!2d-104.81975492428559!3d41.13628387134123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3adbb7478973%3A0xa77aa02f8c529885!2s1603%20Capitol%20Ave%2C%20Cheyenne%2C%20WY%2082001%2C%20USA!5e0!3m2!1sen!2sin!4v1683566354207!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className=""
-              ></iframe>
+            {/* Google Maps with both office locations */}
+            <div className="rounded-lg overflow-hidden w-full h-[260px] border border-gray-700 relative">
+              <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>
               
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 text-xs text-white z-10">
-                <div className=" flex flex-col md:flex-row md:justify-between space-y-2 md:space-y-0">
-                  <div>
-                    <p className="font-medium text-red-400">USA Office:</p>
-                   
-                    <p className="text-gray-300">Cheyenne, WY 82001, United States</p>
-                  </div>
-                  <div className="md:text-right">
-                    <p className="font-medium text-red-400">Canada Office:</p>
-                    <p className="text-gray-300">Calgary, Alberta, Canada</p>
-                  </div>
+              {/* Location labels */}
+              <div className="absolute bottom-3 left-3 bg-black bg-opacity-80 text-white text-xs p-2 rounded z-10">
+                <div className="flex items-center space-x-2 mb-1">
+                  <div className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-[10px] font-bold">A</div>
+                  <span>Cheyenne, WY, USA</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-[10px] font-bold">B</div>
+                  <span>Calgary, Alberta, Canada</span>
                 </div>
               </div>
             </div>
