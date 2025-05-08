@@ -3,6 +3,8 @@ import MainLayout from '../components/layout/MainLayout';
 import HomePage from '../pages/HomePage';
 import ServicePage from '../pages/ServicePage';
 import ContactPage from '../pages/ContactPage';
+import NotFoundPage from '../pages/NotFoundPage';
+import ServiceNotFoundPage from '../pages/ServiceNotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <ContactPage />
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />
       }
     ]
   }

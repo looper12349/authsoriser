@@ -189,7 +189,7 @@ const HomePage = () => {
               </div>
               <div className="md:w-1/2 max-w-lg">
                 <img 
-                  src="/assets/images/24-7-managed-services.png" 
+                  src="/assets/images/24-7-managed-service.png" 
                   alt="24/7 Managed Services" 
                   className="w-full h-auto rounded-lg"
                 />

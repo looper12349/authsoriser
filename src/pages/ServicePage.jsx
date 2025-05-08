@@ -8,6 +8,7 @@ import { SiGooglecloud, SiFirebase, SiPostgresql, SiOracle } from 'react-icons/s
 import GradientRing from '../components/ui/GradientRing';
 import SlideCard from '../components/ui/SlideCard';
 import Slider from '../components/ui/Slider';
+import ServiceNotFoundPage from './ServiceNotFoundPage';
 
 const ServicePage = () => {
   const { serviceId } = useParams();
@@ -21,11 +22,8 @@ const ServicePage = () => {
   }, [serviceId]);
 
   if (!service) {
-    return (
-      <div className="py-16 px-4 text-center">
-        <h2 className="text-2xl font-bold text-gray-900">Service not found</h2>
-      </div>
-    );
+    // Show the ServiceNotFoundPage component directly
+    return <ServiceNotFoundPage />;
   }
 
   return (

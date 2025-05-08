@@ -12,6 +12,8 @@ export default {
         'fadeInUp': 'fadeInUp 0.5s ease-in-out forwards',
         'slideUpFade': 'slideUpFade 0.7s ease-out forwards',
         'marquee': 'marquee 30s linear infinite',
+        'shrink': 'shrink 15s linear forwards',
+        'shine': 'shine 1.5s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -33,6 +35,14 @@ export default {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
+        },
+        shrink: {
+          '0%': { width: '100%' },
+          '100%': { width: '0%' },
+        },
+        shine: {
+          '0%': { left: '-100%', opacity: '0.5' },
+          '100%': { left: '100%', opacity: '0' },
         },
       },
       boxShadow: {
