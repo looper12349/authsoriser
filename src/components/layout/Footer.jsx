@@ -19,9 +19,9 @@ const Footer = () => {
             </Link>
             
             {/* Google Maps Embed */}
-            <div className="rounded-lg overflow-hidden relative w-full h-[140px] border border-gray-700">
+            <div className="rounded-lg overflow-hidden relative w-full h-[260px] border border-gray-700">
               <iframe 
-                title="Authsoriser Office Location"
+                title="Authsoriser Office Locations"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.552656376924!2d-104.81975492428559!3d41.13628387134123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3adbb7478973%3A0xa77aa02f8c529885!2s1603%20Capitol%20Ave%2C%20Cheyenne%2C%20WY%2082001%2C%20USA!5e0!3m2!1sen!2sin!4v1683566354207!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -31,9 +31,19 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className=""
               ></iframe>
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-xs text-white z-10">
-                <p className="font-medium">1603 Capitol Ave Suite</p>
-                <p className="text-gray-300">413 #203 Cheyenne, WY 82001 United States</p>
+              
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 text-xs text-white z-10">
+                <div className=" flex flex-col md:flex-row md:justify-between space-y-2 md:space-y-0">
+                  <div>
+                    <p className="font-medium text-red-400">USA Office:</p>
+                   
+                    <p className="text-gray-300">Cheyenne, WY 82001, United States</p>
+                  </div>
+                  <div className="md:text-right">
+                    <p className="font-medium text-red-400">Canada Office:</p>
+                    <p className="text-gray-300">Calgary, Alberta, Canada</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
