@@ -7,8 +7,8 @@ export const navData = {
       { id: "data-analytics", label: "Data Analytics & Visualizations", path: "/services/data-analytics" },
       { id: "networking", label: "Networking & VPN Setup", path: "/services/networking" },
       { id: "landing-zone", label: "Landing Zone Setup", path: "/services/landing-zone" },
-      { id: "observability", label: "24 X 7 Observability", path: "/services/observability" },
       { id: "finops", label: "FinOps on Google Cloud", path: "/services/finops" },
+      { id: "observability", label: "24 X 7 Observability", path: "/services/observability" },
       { id: "pricing", label: "Google Cloud Pricing", path: "/services/google-cloud-pricing" }
     ]
   },

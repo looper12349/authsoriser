@@ -64,7 +64,7 @@ const ServicePage = () => {
       // Default is GIF background
       return (
         <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-green-900">
-          <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full">
+          <div className="h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] w-full pt-16 sm:pt-12 md:pt-8">
             {/* Decorative background elements */}
             <div 
               className="absolute inset-0 bg-repeat-x bg-center hidden md:block" 
@@ -79,21 +79,21 @@ const ServicePage = () => {
             
             {/* Content container */}
             <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mt-8 sm:mt-4 md:mt-0">
                 {/* Left text content */}
                 <div className="max-w-xl lg:max-w-2xl">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-6">{service.title}</h1>
-                  <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-6">{service.title}</h1>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed line-clamp-4 sm:line-clamp-none">
                     {service.heroDescription}
                   </p>
                   
                   {/* Mobile CTA button - only visible on small screens */}
-                  <div className="mt-6 md:hidden">
+                  <div className="mt-4 md:hidden">
                     <button 
-                      className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors"
+                      className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors"
                       onClick={() => document.getElementById('service-details').scrollIntoView({ behavior: 'smooth' })}
                     >
-                      Explore {service.title.split(' ')[0]} Options
+                      Explore Options
                     </button>
                   </div>
                 </div>
@@ -152,6 +152,62 @@ const ServicePage = () => {
     return rows;
   };
 
+  const renderOverviewSection = () => {
+    if (!service.overview || service.overview.length === 0) return null;
+    
+    return (
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">{service.overviewTitle}</h2>
+            <p className="text-2xl font-semibold text-red-600 mb-6">
+              {service.overviewSubtitle}
+            </p>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
+              {service.overviewDescription}
+            </p>
+          </div>
+          
+          {/* Training cards with alternating layout */}
+          <div className="space-y-10 md:space-y-16">
+            {service.overview.map((item, index) => (
+              <div 
+                key={`overview-${index}`} 
+                className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-6 md:gap-8 shadow-lg rounded-2xl p-6 md:p-8 bg-white`}
+              >
+                <div className="w-full md:w-1/2 max-w-lg">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-red-600 font-medium mb-4">
+                    {item.duration}
+                  </p>
+                  <ul className="space-y-2 text-gray-600 list-disc pl-5">
+                    {item.features.map((feature, i) => (
+                      <li key={`feature-${index}-${i}`} className="leading-relaxed">
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="w-full md:w-1/2 max-w-lg mt-6 md:mt-0">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-auto rounded-lg shadow-sm"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+
+
   // Render the slider section
   const renderSlider = () => {
     if (!service.slider || service.slider.length === 0) return null;
@@ -159,6 +215,15 @@ const ServicePage = () => {
     return (
       <section className="py-16 bg-white">
         <div className="w-full">
+          
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">{service.sliderTitle}</h2>
+            <p className="text-3xl font-semibold text-red-600 max-w-3xl mx-auto">
+              {service.sliderSubTitle}
+            </p>
+          </div>
+          </div>
           <Slider
             slides={service.slider.map((slide, index) => (
               <SlideCard
@@ -176,6 +241,236 @@ const ServicePage = () => {
     );
   };
 
+  // Render Feature Section
+
+  const renderFeature = () => {
+    if (!service.features || service.features.length === 0) return null;
+    
+    return (
+      <section className="py-16 bg-white">
+        <div className="w-full">
+          
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">{service.featureTitle}</h2>
+            <p className="text-3xl font-semibold text-red-600 max-w-3xl mx-auto">
+              {service.featureSubTitle}
+            </p>
+          </div>
+          </div>
+          <Slider
+            slides={service.features.map((feature, index) => (
+              <SlideCard
+                key={`slide-${index}`}
+                image={feature.image}
+                title={feature.title}
+                description={feature.description}
+                path={feature.path}
+              />
+            ))}
+            autoplaySpeed={6000}
+          />
+        </div>
+      </section>
+    );
+  };
+
+
+  const CheckIcon = () => (
+    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+    </svg>
+  );
+  
+  const CrossIcon = () => (
+    <svg className="w-5 h-5 text-red-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+    </svg>
+  );
+
+
+  const renderPricingPlans = () => {
+    if (!service.pricingPlans) return null;
+    
+    return (
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-48 h-48 bg-red-50 rounded-full opacity-70 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-red-50 rounded-full opacity-70 translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/2 right-0 w-24 h-24 bg-red-100 rounded-full opacity-50 translate-x-1/2"></div>
+        <div className="absolute bottom-1/3 left-0 w-32 h-32 bg-gray-50 rounded-full opacity-60 -translate-x-1/3"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{service.pricingPlans.heading}</h2>
+            <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
+            <p className="text-2xl font-semibold text-red-600 mb-5">{service.pricingPlans.subheading}</p>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">{service.pricingPlans.description}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {service.pricingPlans.plans.map((plan, index) => (
+              <div 
+                key={`plan-${index}`} 
+                className={`rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  index === 2 ? 'bg-white ring-2 ring-red-400 ring-opacity-50' : 'bg-white'
+                }`}
+              >
+                {/* Plan header */}
+                <div className={`py-8 px-6 ${
+                  index === 2 ? 'bg-gradient-to-r from-red-600 to-red-700' : 
+                  index === 1 ? 'bg-gradient-to-r from-red-500 to-red-600' : 
+                  'bg-gradient-to-r from-red-400 to-red-500'
+                }`}>
+                  <h3 className="text-2xl font-bold text-white text-center">{plan.title}</h3>
+                  {index === 2 && (
+                    <div className="bg-white text-red-600 text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mt-2 mx-auto">
+                      RECOMMENDED
+                    </div>
+                  )}
+                </div>
+                
+                {/* Response time highlight */}
+                <div className="py-6 px-8 bg-white border-b border-gray-100">
+                  <p className="font-medium text-center">Response Time: <span className="font-bold text-red-600 ml-1">{plan.responseTime}</span></p>
+                </div>
+                
+                {/* Features list */}
+                <div className="p-8 bg-white">
+                  <ul className="space-y-5">
+                    {plan.features.map((feature, i) => (
+                      <li key={`feature-${index}-${i}`} className="flex items-start">
+                        {feature.included ? 
+                          <div className="flex-shrink-0 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div> : 
+                          <div className="flex-shrink-0 w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                            <svg className="w-3 h-3 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        }
+                        <span className="text-gray-700 leading-tight">{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* CTA */}
+                <div className="p-8 bg-white border-t border-gray-100">
+                  <Link 
+                    to="/contact" 
+                    className={`block text-center py-3 px-6 rounded-lg transition-all duration-300 font-medium ${
+                      index === 2 ? 
+                      'bg-red-600 hover:bg-red-700 text-white shadow-md hover:shadow-lg' : 
+                      'bg-white border-2 border-red-400 hover:border-red-500 hover:bg-red-50 text-red-600'
+                    }`}
+                  >
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+
+  const renderSupportPlans = () => {
+    if (!service.supportPlans) return null;
+    
+    return (
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-48 h-48 bg-red-50 rounded-full opacity-70 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-red-50 rounded-full opacity-70 translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/2 right-0 w-24 h-24 bg-red-100 rounded-full opacity-50 translate-x-1/2"></div>
+        <div className="absolute bottom-1/3 left-0 w-32 h-32 bg-gray-50 rounded-full opacity-60 -translate-x-1/3"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{service.supportPlans.heading}</h2>
+            <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
+            <p className="text-2xl font-semibold text-red-600 mb-5">{service.supportPlans.subheading}</p>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">{service.supportPlans.description}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {service.supportPlans.plans.map((plan, index) => (
+              <div 
+                key={`plan-${index}`} 
+                className={`rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  index === 2 ? 'bg-white ring-2 ring-red-400 ring-opacity-50' : 'bg-white'
+                }`}
+              >
+                {/* Plan header */}
+                <div className={`py-8 px-6 ${
+                  index === 2 ? 'bg-gradient-to-r from-red-600 to-red-700' : 
+                  index === 1 ? 'bg-gradient-to-r from-red-500 to-red-600' : 
+                  'bg-gradient-to-r from-red-400 to-red-500'
+                }`}>
+                  <h3 className="text-2xl font-bold text-white text-center">{plan.title}</h3>
+                  {index === 2 && (
+                    <div className="bg-white text-red-600 text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mt-2 mx-auto">
+                      RECOMMENDED
+                    </div>
+                  )}
+                </div>
+                
+                {/* Response time highlight */}
+                <div className="py-6 px-8 bg-white border-b border-gray-100">
+                  {/* <p className="font-medium text-center">Response Time: <span className="font-bold text-red-600 ml-1">{plan.responseTime}</span></p> */}
+                </div>
+                
+                {/* Features list */}
+                <div className="p-8 bg-white">
+                  <ul className="space-y-5">
+                    {plan.features.map((feature, i) => (
+                      <li key={`feature-${index}-${i}`} className="flex items-start">
+                        {feature.included ? 
+                          <div className="flex-shrink-0 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div> : 
+                          <div className="flex-shrink-0 w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                            <svg className="w-3 h-3 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        }
+                        <span className="text-gray-700 leading-tight">{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* CTA */}
+                <div className="p-8 bg-white border-t border-gray-100">
+                  <Link 
+                    to="/contact" 
+                    className={`block text-center py-3 px-6 rounded-lg transition-all duration-300 font-medium ${
+                      index === 2 ? 
+                      'bg-red-600 hover:bg-red-700 text-white shadow-md hover:shadow-lg' : 
+                      'bg-white border-2 border-red-400 hover:border-red-500 hover:bg-red-50 text-red-600'
+                    }`}
+                  >
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  
   // Render the CTA section
   const renderCTA = () => {
     if (!service.cta) return null;
@@ -212,7 +507,18 @@ const ServicePage = () => {
       {/* Hero Section with dynamic background */}
       {renderHeroSection()}
 
+
+      {renderPricingPlans()}
+
+      {renderSupportPlans()}
+
+      {/* Overview Section - New addition with training cards */}
+      {renderOverviewSection()}
+
       {/* Service Details Section */}
+      {service.cardTitle && service.cardDescription && service.cards &&
+
+
       <section id="service-details" className="py-16 bg-gray-50 relative overflow-hidden">
         {/* Decorative background circles */}
         <GradientRing 
@@ -247,12 +553,19 @@ const ServicePage = () => {
           {renderServiceCards()}
         </div>
       </section>
+      }
+
 
       {/* Slider with Cards Section - Dynamic Based on Service Data */}
       {renderSlider()}
 
+      {/* Feature Section - Dynamic Based on Service Data */}
+      {renderFeature()}
+
       {/* CTA Section - Dynamic Based on Service Data */}
       {renderCTA()}
+
+      
     </div>
   );
 };

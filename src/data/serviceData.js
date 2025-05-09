@@ -452,9 +452,9 @@ export const serviceData = {
     cardDescription: "Observability tools tailored to your needs",
     cards: [
       {
-        icon: "FaFileAlt",
-        title: "Cloud Logging",
-        description: "Collects, stores, and monitors log data from applications and services across Google Cloud Platform (GCP) and on-premises environments. It offers real-time log management, analysis, and alerting to help you troubleshoot issues, monitor performance, and maintain compliance."
+        icon: "FaServer",
+        title: "Compute",
+        description: "Service-specific cost-optimization controls for Compute Engine, Google Kubernetes Engine, Cloud Run, Cloud Functions, and App Engine."
       },
 
       {
@@ -512,5 +512,834 @@ export const serviceData = {
       buttonText: "Get Free Assesment",
       buttonLink: "/contact"
     }
+  },
+
+
+  "finops": {
+    title: "Optimise your Cloud Consumption Cost with Authsoriser",
+    description: "Experiencing unexpected changes in the Business Demands ? Authsoriser offers the Ultimate FinOps for Google Cloud. Save big, Innovate more.",
+    heroBackground: {
+      type: "video",
+      src: "https://www.authsoriser.io/cost-optimization.mp4"
+    },
+    heroDescription: "Experiencing unexpected changes in the Business Demands ? Authsoriser offers the Ultimate FinOps for Google Cloud. Save big, Innovate more.",
+    cardTitle: "Optimise Your Costs on",
+    cardDescription: "Compute Storage & Network",
+    cards: [
+      {
+        icon: "FaMemory",
+        title: "Compute",
+        description: "Service-specific cost-optimization controls for Compute Engine, Google Kubernetes Engine, Cloud Run, Cloud Functions, and App Engine."
+      },
+      {
+        icon: "FaDatabase",
+        title: "Storage",
+        description: "Cost-optimization controls for Cloud Storage, Persistent Disk, and Filestore."
+      },
+      {
+        icon: "FaChartBar",
+        title: "Analytics",
+        description: "Cost-optimization controls for Databases & Analytics services such as BigQuery, Bigtable, Spanner, Cloud SQL, Dataflow, and Dataproc."
+      },
+      {
+        icon: "FaNetworkWired",
+        title: "Networking",
+        description: "Cost-optimization controls for your networking resources in Google Cloud."
+      },
+      {
+        icon: "FaDesktop",
+        title: "Observability",
+        description: "Recommendations to help you optimise the cost of monitoring and managing your resources in Google Cloud."
+      }
+    ],
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Deep Domain expertise",
+        description: "With Google Cloud FinOps Expertise, we focus on Business value and not just as Cost Reduction."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Personalised Plans",
+        description: "Custom developed financial plans for cost efficiency, trust and business value realization.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Platform Based",
+        description: "Strategic application of right tools and process for comprehensive FinOps analysis.",
+        path: "/services/data-security"
+      }
+    ],
+    cta: {
+      title: "Maximize Cloud Value with",
+      subtitle: "Authsoriser's Strategic Cost Optimization",
+      description: [
+        "Elevate your cloud spending with Authsoriser's FinOps services for Google Cloud. Our experts focus on driving business value, not just cost reduction. Benefit from personalized financial plans leveraging our deep expertise and data-driven platform. Gain granular cost optimization across compute, storage, analytics, networking, and observability services. Partner with Authsoriser to maximize returns on your cloud investment while driving innovation. Unlock cloud value with strategic cost optimization.",
+        "Talk to our FinOps team and gain valuable insights into optimizing your existing architecture for cost-efficiency before June 15th, 2024."
+
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+  "google-cloud-pricing": {
+    title: "Google Cloud Platform Pricing Simplified",
+    description: "Optimize costs with transparent and predictable pricing. Maximize value with flexible and scalable options tailored to your business needs.",
+    heroBackground: {
+      type: "video",
+      src: "https://www.authsoriser.io/google-cloud-pricing.mp4"
+    },
+    heroDescription: "Optimize costs with transparent and predictable pricing. Maximize value with flexible and scalable options tailored to your business needs.",
+    cardTitle: "How Authsoriser Can Help",
+    cardDescription: "Manage Your GCP Costs",
+    cards: [
+      {
+        icon: "FaChartLine",
+        title: "Cost Projections and Budgeting",
+        description: "We provide accurate cost estimations and budget projections tailored to your GCP usage, enabling proactive financial planning and cost management."
+      },
+      {
+        icon: "FaOptinMonster",
+        title: "Resource Optimization",
+        description: "Our experts analyze your usage patterns and fine-tune resource allocation across services and regions. This ensures optimal performance and cost-effectiveness in your cloud infrastructure."
+      },
+      {
+        icon: "FaSitemap",
+        title: "Strategic Scenario Analysis",
+        description: "We conduct detailed scenario planning to help you make informed decisions about resource allocation, ensuring your cloud strategy aligns with business goals."
+      },
+      {
+        icon: "FaBalanceScale",
+        title: "Budgetary Governance",
+        description: "Implement robust controls and disciplined expenditure planning with Authsoriser.ai's guidance. We help you maintain financial discipline while leveraging GCP's capabilities."
+      },
+      {
+        icon: "FaChartBar",
+        title: "Automated Cost Monitoring",
+        description: "We implement automated monitoring tools to track real-time GCP expenses. This allows for immediate adjustments and alerts to prevent budget overruns."
+      },
+      {
+        icon: "FaPiggyBank",
+        title: "Customized Savings Plans",
+        description: "Authsoriser designs tailored savings plans, leveraging GCP's committed use contracts. This ensures maximum savings and aligns with your long-term cloud usage patterns."
+      }
+    ],
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Compute Pricing",
+        description: "GCP provides virtual machines (VMs) called Compute Engine instances, priced based on factors like machine type (e.g., standard, high memory, etc.), region, and usage duration (billed per second)."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Storage Pricing",
+        description: "GCP offers different storage options, including Cloud Storage for object storage, Persistent Disk for block storage, and Filestore for file storage. Pricing is based on the amount of data stored, data transfer, and operations performed.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Network Pricing",
+        description: "GCP charges for network usage, including data transfer within the same region, between regions, and to the internet. Pricing is based on the volume of data transferred."
+      }
+    ],
+    cta: {
+      title: "Maximize Cloud Value with",
+      subtitle: "Authsoriser's Strategic Cost Optimization",
+      description: [
+        "Elevate your cloud spending with Authsoriser's FinOps services for Google Cloud. Our experts focus on driving business value, not just cost reduction. Benefit from personalized financial plans leveraging our deep expertise and data-driven platform. Gain granular cost optimization across compute, storage, analytics, networking, and observability services. Partner with Authsoriser to maximize returns on your cloud investment while driving innovation. Unlock cloud value with strategic cost optimization.",
+        "Talk to our FinOps team and gain valuable insights into optimizing your existing architecture for cost-efficiency before June 15th, 2024."
+
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+
+  "build-poc": {
+    title: "Future Proof Your Business with Authsoriser's Managed Services",
+    description: "Authsoriser is your one-stop shop for post-implementation 24/7 support, automation, and all customer support needs.",
+    heroBackground: {
+      type: "gif",
+      src: "/assets/gif/build-poc.gif"
+    },
+    heroDescription: "Authsoriser is your one-stop shop for post-implementation 24/7 support, automation, and all customer support needs.",
+    cardTitle: "Leverage Google Cloud's AI tools to",
+    cardDescription: "Transform your Business and drive Innovation",
+    cards: [
+      {
+        icon: "FaBrain", 
+        title: "Vertex AI",
+        description: "A unified machine learning platform that streamlines the end-to-end ML workflow, from data preparation to model deployment and monitoring, enhancing productivity and model quality."
+      },
+      {
+        icon: "FaRobot",
+        title: "AutoML",
+        description: "A suite of machine learning products that allows developers with limited expertise to train high-quality models using Google's powerful algorithms and easy-to-use interfaces."
+      },
+      {
+        icon: "FaDatabase",
+        title: "BigQuery ML",
+        description: "Enables data analysts and scientists to build and operationalize machine learning models directly within BigQuery using SQL, simplifying the integration of ML with big data analytics."
+      },
+      {
+        icon: "FaLayerGroup",
+        title: "AI Platform",
+        description: "A flexible and scalable environment for training, tuning, and deploying ML models, supporting both custom code and pre-built algorithms, suitable for a wide range of ML applications."
+      },
+      {
+        icon: "FaServer",
+        title: "Deep Learning VM Image",
+        description: "Pre-configured virtual machine images optimized for deep learning, offering ready-to-use environments with popular frameworks like TensorFlow and PyTorch to accelerate model development."
+      },
+      {
+        icon: "FaFileAlt",
+        title: "Document AI",
+        description: "An intelligent document processing platform that uses ML to automate the extraction of structured data from unstructured documents, improving efficiency and accuracy in document management."
+      },
+      {
+        icon: "FaLanguage",
+        title: "Cloud Natural Language API",
+        description: "Provides powerful natural language understanding technologies to developers, enabling the analysis and extraction of insights from text, such as sentiment analysis and entity recognition."
+      },
+      {
+        icon: "FaEye",
+        title: "Cloud Vision API",
+        description: "Offers image recognition capabilities that can classify images, detect objects and faces, and read printed and handwritten text, enhancing the functionality of apps with visual data processing."
+      },
+      {
+        icon: "FaMicrophone",
+        title: "Speech-to-Text API",
+        description: "Converts audio to text with high accuracy, supporting a variety of languages and audio formats, making it ideal for applications that require transcription and voice recognition features."
+      }
+    ],
+    sliderTitle: "How would Authsoriser",
+    sliderSubTitle: "Work with You ?",
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Discovery and Analysis",
+        description: "Engage stakeholders in discovery sessions to understand business objectives and challenges, identify AI/ML use cases, and evaluate technical feasibility for impactful solutions."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Build Proof-of-Concepts",
+        description: "Create rapid prototypes, refine based on feedback, and validate against business and technical standards for effective proof-of-concept.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "PoC to Production",
+        description: "Develop custom solutions, seamlessly integrate them into existing systems, deploy with full support, monitor performance, iterate based on real-world data and user feedback, and scale solutions for maximum organizational impact."
+      }
+    ],
+    featureTitle: "Why Choose Authsoriser as",
+    featureSubTitle: "Your Partner ?",
+    features: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Real World Expertise",
+        description: "Our team comprises ex-Googlers and experienced professionals adept in GenAI, ML, and data engineering."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Readiness Assessment",
+        description: "Our GenAI Readiness Assessment ensures a tailored approach for optimal success.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "POC to Production",
+        description: "We deliver quick wins that solve immediate problems and drive long-term business value."
+      }
+    ],
+    cta: {
+      title: "Transform Your Ideas into",
+      subtitle: "Reality with Authsoriser",
+      description: [
+        "At Authsoriser, we’re committed to turning your innovative ideas into reality. Our team specializes in prototyping, building proof of concepts (POCs), and productionizing applications tailored to your business needs.",
+        "Whether you're a startup looking to disrupt the market or an enterprise seeking to optimize operations, we offer scalable solutions that deliver real business impact. Partner with Authsoriser to harness the full potential of AI and Google Cloud technologies. Contact us today to discover how we can help you prototype, build, and scale your next big idea."
+
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+  "poc-production": {
+    title: "Empower Your Projects with End-to-End AI Solutions",
+    description: "With Authsoriser's comprehensive project lifecycle management and Google Cloud's advanced AI technologies, we bring your ideas to life, ensuring seamless development and impactful results.",
+    heroBackground: {
+      type: "gif",
+      src: "/assets/gif/app-dev.gif"
+    },
+    heroDescription: "With Authsoriser's comprehensive project lifecycle management and Google Cloud's advanced AI technologies, we bring your ideas to life, ensuring seamless development and impactful results.",
+    cardTitle: "Leverage Authsoriser's Advanced",
+    cardDescription: "ML Capabilities to Elevate Your Business",
+    cards: [
+      {
+        icon: "FaTools", 
+        title: "Precision Model Tuning",
+        description: "Optimize your machine learning models to meet specific business needs, ensuring high performance and accuracy tailored to your unique requirements."
+      },
+      {
+        icon: "FaDatabase",
+        title: "Comprehensive Data Preparation",
+        description: "Leverage advanced data preprocessing techniques to clean, transform, and enrich your data, setting a solid foundation for successful AI/ML projects."
+      },
+      {
+        icon: "FaRobot",
+        title: "Automated Machine Learning",
+        description: "Streamline the model development process with automated machine learning, reducing the time and expertise needed to build high-quality models."
+      },
+      {
+        icon: "FaRocket",
+        title: "Efficient Model Deployment",
+        description: "Deploy models efficiently and securely, integrating them into your existing systems to deliver real-time predictions and insights where they are needed most."
+      },
+      {
+        icon: "FaChartLine",
+        title: "Continuous Monitoring and Maintenance",
+        description: "Continuously monitor model performance and make necessary adjustments to ensure sustained accuracy and reliability in production environments."
+      },
+      {
+        icon: "FaCloud",
+        title: "Scalable Cloud Infrastructure",
+        description: "Utilize Google Cloud's scalable infrastructure to handle large-scale AI/ML workloads, ensuring your solutions can grow with your business demands."
+      }
+    ],
+    
+    sliderTitle: "Our Proven Approach to",
+    sliderSubTitle: "AI Project Success",
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Discovery and Analysis",
+        description: "Engage stakeholders in discovery sessions to understand business objectives and challenges, identify AI/ML use cases, and evaluate technical feasibility for impactful solutions."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Rapid Prototyping",
+        description: "Create rapid prototypes, iteratively refine based on product feedback, and validate against business and technical standards for effective and practical proof-of-concept solutions.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "PoC to Production",
+        description: "Develop custom solutions, seamlessly integrate them into existing systems, deploy with full support, monitor performance, iterate based on real-world data and user feedback, and scale solutions for maximum organizational impact."
+      }
+    ],
+    featureTitle: "Why Choose Authsoriser as",
+    featureSubTitle: "Your Partner ?",
+    features: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Real World Expertise",
+        description: "Our team comprises ex-Googlers and experienced professionals adept in GenAI, ML, and data engineering."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Tailored Assessment",
+        description: "Our GenAI Readiness Assessment ensures a tailored approach for optimal success.",
+        path: "/services/networking"
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Seamless Productionisation",
+        description: "We deliver quick wins that solve immediate problems and drive long-term business value."
+      }
+    ],
+    cta: {
+      title: "Transform Your Ideas into",
+      subtitle: "Reality with Authsoriser",
+      description: [
+        "At Authsoriser, we’re committed to turning your innovative ideas into reality. Our team specializes in prototyping, building proof of concepts (POCs), and productionizing applications tailored to your business needs.",
+        "Whether you're a startup looking to disrupt the market or an enterprise seeking to optimize operations, we offer scalable solutions that deliver real business impact. Partner with Authsoriser to harness the full potential of AI and Google Cloud technologies. Contact us today to discover how we can help you prototype, build, and scale your next big idea."
+
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+  // Google WorkSpace Section
+
+
+  "collaboration": {
+    title: "Work Smarter, Together with Google Workspace",
+    description: "Empower your workforce with Google's premier productivity suite, designed to transform how you collaborate and achieve success.",
+    heroBackground: {
+      type: "video",
+      src: "https://www.authsoriser.io/7uffzv9dk4sn-7hKvAioxXzE82hvj7kMopV-932d7bca6dc128089e803f9cac9dc634-14786_HomePageFeature_Demo_v10_MidRes_96F9E3FC.mp4",
+    },
+    heroDescription: "Empower your workforce with Google's premier productivity suite, designed to transform how you collaborate and achieve success.",
+    sliderTitle: "Flexible, Transparent Pricing",
+    sliderSubTitle: "from Google Cloud",
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Seamless Migration",
+        description: "Migrate your existing emails, contacts, and other data from other workspace providers e.g. Microsoft 365 to Google Workspace with zero downtime."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Google Certified Team",
+        description: "Google certified GWS team that understands your business requirements and challenges and solves it using custom built tools and services."
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Change Management",
+        description: "We methodically guide your business transformation with targeted coaching and strategic realignment of objectives to ensure your team's success."
+      },
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Customer Success",
+        description: "Hybrid work is now the norm; boost productivity with AI powered Google Workspace, optimizing both remote and office work for your organization."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Admin as a Service",
+        description: "Outsource your day-to-day admin tasks, user accounts, and data protection compliance to Authsoriser, so that you focus more on growing your business."
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Cost Savingst",
+        description: "Authsoriser's competitive pricing and flexible billing options ensure you enjoy significant cost savings compared to buying directly from Google."
+      }
+    ],
+    
+    cta: {
+      title: "Ready to take your",
+      subtitle: "Business to New Heights ?",
+      description: [
+        "Partner with us to harness the full power of Google Workspace. Our experts guide you every step of the way, from setup and migration to ongoing support and training.",
+"Transform the way you work and revolutionize your business with Google Workspace. Contact us to start your journey to better collaboration, communication, and productivity."
+
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+  "office365-migration": {
+    title: "Transform Your Productivity With Google Workspace",
+    description: "Unlock seamless collaboration and innovation with Google Workspace, offering powerful productivity tools integrated with Google's secure cloud infrastructure, empowering your team to work smarter and faster.",
+    heroBackground: {
+      type: "gif",
+      src: "/assets/gif/o365.gif",
+    },
+    heroDescription: "Unlock seamless collaboration and innovation with Google Workspace, offering powerful productivity tools integrated with Google's secure cloud infrastructure, empowering your team to work smarter and faster.",
+    cardTitle: "Why migrate to",
+    cardDescription: "Google Workspace ?",
+    cards: [
+      {
+        icon: "FaChartLine", 
+        title: "Enhanced Productivity",
+        description: "Google Workspace users consistently report higher productivity levels, with 52% achieving very productive remote work environments compared to 44% using Microsoft 365."
+      },
+      {
+        icon: "FaMoneyBillWave",
+        title: "Revenue Growth",
+        description: "Businesses switching to Google Workspace experience increased revenue, with 68% of large enterprises switching noting a positive impact on financial outcomes."
+      },
+      {
+        icon: "FaUserCheck",
+        title: "Easy Adoption",
+        description: "Teams quickly adapt to Google Workspace, with 50% reporting feeling comfortable within the first month, highlighting the platform's intuitive interface and robust feature set."
+      },
+      {
+        icon: "FaLightbulb",
+        title: "Innovation Boost",
+        description: "An impressive 82% of Google Workspace users have reported experiencing increased team innovation, demonstrating the seamless integration and effective utilization of collaborative tools."
+      },
+      {
+        icon: "FaUsers",
+        title: "Enhanced Collaboration",
+        description: "Over 60% of Google Workspace users find that collaborative projects are more efficient and streamlined compared to traditional methods, fostering a culture of teamwork and creativity."
+      },
+      {
+        icon: "FaShieldAlt",
+        title: "Improved Security",
+        description: "Businesses migrating to Google Workspace report a 55% reduction in security incidents and downtime, ensuring uninterrupted operations and peace of mind for IT teams and users alike."
+      }
+    ],
+    
+    sliderTitle: "Why Choose Authsoriser as",
+    sliderSubTitle: "Your Migration Partner ?",
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+        title: "Seamless Migration",
+        description: "End-to-End migration services ensuring zero downtime along with comprehensive data transfer including emails, contacts, and permissions and more."
+      },
+      {
+        image: "/assets/images/smartworkspace.png",
+        title: "Change Management",
+        description: "We methodically guide your business transformation with targeted coaching and strategic realignment of objectives to ensure your team's success."
+      },
+      {
+        image: "/assets/images/realtime.png",
+        title: "Admin as a Service",
+        description: "Outsource your day-to-day admin tasks, user accounts, and data protection compliance to Authsoriser, so that you focus more on growing your business."
+      }
+    ],
+
+    
+    
+    cta: {
+      title: "Ready for a switch from",
+      subtitle: "Microsoft 365 to Google Workspace ?",
+      description: [
+        "Google Workspace offers flexible plans, powerful collaboration tools, and seamless integration, making it a top choice for productivity. Partner with Authsoriser to maximize your Google Workspace investment and transform your organization’s productivity today."
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+
+  "user-adoption": {
+    title: "Transform Your Productivity With Google Workspace",
+    description: "Unlock seamless collaboration and innovation with Google Workspace, offering powerful productivity tools integrated with Google's secure cloud infrastructure, empowering your team to work smarter and faster.",
+    heroBackground: {
+      type: "gif",
+      src: "/assets/gif/training.gif",
+    },
+    heroDescription: "Unlock seamless collaboration and innovation with Google Workspace, offering powerful productivity tools integrated with Google's secure cloud infrastructure, empowering your team to work smarter and faster.",
+
+    // Add these for the overview section header
+    overviewTitle: "Authsoriser's Google Workspace",
+    overviewSubtitle: "User Adoption Trainings",
+    overviewDescription: "If your organization is embracing Google Workspace, our tailored training programs are designed for you. Discover how to enhance productivity, streamline collaboration, and customize workflows to match your unique work style.",
+    
+    // Add the training programs data
+    overview: [
+      {
+        title: "Google Workspace Essentials",
+        duration: "Duration: 1 Day",
+        image: "/assets/images/workspace-essentials.webp",
+        features: [
+          "Learn the fundamentals of Google Workspace to boost productivity.",
+          "Master security features to protect your data.",
+          "Customize workflows to suit your personal work style.",
+          "Enhance collaboration and sharing within your organization."
+        ]
+      },
+      {
+        title: "Gmail and Google Calendar",
+        duration: "Duration: 2 Hours",
+        image: "/assets/images/gmail-google-calendar.webp",
+        features: [
+          "Manage your emails efficiently with advanced Gmail features.",
+          "Schedule and manage events effortlessly with Google Calendar.",
+          "Integrate Gmail and Calendar for seamless scheduling.",
+          "Learn tips and tricks to optimize email and calendar use."
+        ]
+      },
+      {
+        title: "Google Meet and Chat",
+        duration: "Duration: 2 Hours",
+        image: "/assets/images/hangouts-meet.webp",
+        features: [
+          "Conduct effective meetings with Google Meet.",
+          "Utilize Google Chat for instant communication and collaboration.",
+          "Explore features like screen sharing and recording in Meet.",
+          "Learn best practices for virtual team communication."
+        ]
+      },
+      {
+        title: "Google Drive, Docs & Slides",
+        duration: "Duration: 4 Hours",
+        image: "/assets/images/drive-docs-sheets-slides.webp",
+        features: [
+          "Store and organize files in Google Drive.",
+          "Create and collaborate on documents in real-time with Google Docs.",
+          "Design compelling presentations with Google Slides.",
+          "Learn how to share and manage permissions for files and folders."
+        ]
+      },
+      {
+        title: "Google Sheets",
+        duration: "Duration: 3 Hours",
+        image: "/assets/images/google-sheets.webp",
+        features: [
+          "Get started with Google Sheets for data management.",
+          "Learn basic formulas and functions for data analysis.",
+          "Collaborate on spreadsheets in real-time.",
+          "Customize Sheets with formatting and data validation."
+        ]
+      },
+      {
+        title: "Google Sheets - Advanced",
+        duration: "Duration: 3 Hours",
+        image: "/assets/images/google-sheets-advanced.webp",
+        features: [
+          "Master advanced formulas and functions for complex data analysis.",
+          "Automate tasks with Google Sheets scripting and macros.",
+          "Integrate Sheets with other Google Workspace apps.",
+          "Analyze data with pivot tables and advanced charting tools."
+        ]
+      },
+      {
+        title: "GWS Administration Bootcamp",
+        duration: "Duration: 3 Days",
+        image: "/assets/images/google-workspace.webp",
+        features: [
+          "Gain comprehensive knowledge of the Google Workspace Admin Console.",
+          "Learn to migrate data from other platforms to Google Workspace.",
+          "Master user and group provisioning and management.",
+          "Implement robust identity and access management strategies.",
+          "Manage and secure your Google Workspace environment.",
+          "Optimize email management and ensure mail security."
+        ]
+      },
+      {
+        title: "Leadership Enablement",
+        duration: "Duration: 3 Hours",
+        image: "/assets/images/google-workspace-managed-services.webp",
+        features: [
+          "Understand the essentials of organizational change management for GWS.",
+          "Develop a multi-phase deployment strategy to ensure smooth transitions.",
+          "Learn key insights for leaders about the migration process.",
+          "Create a coexistence strategy for maintaining productivity during the migration."
+        ]
+      }
+    ],
+
+
+    cardTitle: "Why migrate to",
+    cardDescription: "Google Workspace ?",
+    cards: [
+      {
+        icon: "FaChartLine", 
+        title: "Enhanced Productivity",
+        description: "Google Workspace users consistently report higher productivity levels, with 52% achieving very productive remote work environments compared to 44% using Microsoft 365."
+      },
+      {
+        icon: "FaMoneyBillWave",
+        title: "Revenue Growth",
+        description: "Businesses switching to Google Workspace experience increased revenue, with 68% of large enterprises switching noting a positive impact on financial outcomes."
+      },
+      {
+        icon: "FaUserCheck",
+        title: "Easy Adoption",
+        description: "Teams quickly adapt to Google Workspace, with 50% reporting feeling comfortable within the first month, highlighting the platform's intuitive interface and robust feature set."
+      },
+      {
+        icon: "FaLightbulb",
+        title: "Innovation Boost",
+        description: "An impressive 82% of Google Workspace users have reported experiencing increased team innovation, demonstrating the seamless integration and effective utilization of collaborative tools."
+      },
+      {
+        icon: "FaUsers",
+        title: "Enhanced Collaboration",
+        description: "Over 60% of Google Workspace users find that collaborative projects are more efficient and streamlined compared to traditional methods, fostering a culture of teamwork and creativity."
+      },
+      {
+        icon: "FaShieldAlt",
+        title: "Improved Security",
+        description: "Businesses migrating to Google Workspace report a 55% reduction in security incidents and downtime, ensuring uninterrupted operations and peace of mind for IT teams and users alike."
+      }
+    ],
+
+    sliderTitle: "Why Choose Authsoriser as",
+  sliderSubTitle: "Your Adoption Provider ?",
+  slider: [
+    {
+      image: "/assets/images/googlecloud.png",
+      title: "Technical Expertise",
+      description: "Our team comprises of Google Certified Workspace professionals with extensive experience."
+    },
+    {
+      image: "/assets/images/smartworkspace.png",
+      title: "Customized Programs",
+      description: "We tailor our training programs to specifically focus on your organization's specific needs."
+    },
+    {
+      image: "/assets/images/realtime.png",
+      title: "Comprehensive Coverage",
+      description: "From basic user training to advanced admin courses, we cover all aspects of Google Workspace."
+    },
+    {
+      image: "/assets/images/googlecloud.png",
+      title: "Proven Methodologies",
+      description: "We use best practices and proven methodologies to ensure effective learning and adoption."
+    },
+    {
+      image: "/assets/images/smartworkspace.png",
+      title: "Support",
+      description: "We provide ongoing support to ensure your team continues to succeed with Google Workspace."
+    },
+    {
+      image: "/assets/images/realtime.png",
+      title: "Results Oriented",
+      description: "Our training programs are designed to deliver measurable improvements in productivity and collaboration."
+    }
+  ],
+
+    
+    cta: {
+      title: "Ready to Transform Your",
+      subtitle: "Workflow with Google Cloud ?",
+      description: [
+        "Take the next step towards maximizing your team's productivity with Google Workspace. Contact us today to learn more about our training programs and how we can help your organization thrive."
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
+  },
+
+
+
+  "pricing-support": {
+    title: "Future Proof Your Business with Authsoriser's Managed Services",
+    description: "Authsoriser is your one-stop shop for post-implementation 24/7 support, automation, and all customer support needs.",
+    heroBackground: {
+      type: "gif",
+      src: "/assets/gif/pricing.gif",
+    },
+    heroDescription: "Authsoriser is your one-stop shop for post-implementation 24/7 support, automation, and all customer support needs.",
+
+     // Add this new section for pricing plans
+  pricingPlans: {
+    heading: "Google Support Offerings",
+    description: "Google offers a comprehensive range of reliable support options to ensure your Google Workspace environment operates smoothly, efficiently, and securely.",
+    plans: [
+      {
+        title: "24/7 User Support",
+        responseTime: "Within 4 hours",
+        features: [
+          { text: "24/7 Support for P1 issues", included: true },
+          { text: "Multi Channel support e.g. email, chat, and phone etc.", included: true },
+          { text: "Technical Expert's Support for Advanced Product Knowledge", included: false },
+          { text: "Technical Account Manager", included: false },
+          { text: "Operational Health Review", included: false },
+          { text: "Customer Aware Support & Trainings", included: false }
+        ]
+      },
+      {
+        title: "Enhanced Support",
+        responseTime: "Within 1 hour",
+        features: [
+          { text: "24/7 Support for P1 and P2 issues", included: true },
+          { text: "Multi Channel support e.g. email, chat, and phone etc.", included: true },
+          { text: "Technical Expert's Support for Advanced Product Knowledge", included: true },
+          { text: "Technical Account Manager", included: false },
+          { text: "Operational Health Review", included: false },
+          { text: "Customer Aware Support & Trainings", included: false }
+        ]
+      },
+      {
+        title: "Premium Support",
+        responseTime: "Within 15 minutes",
+        features: [
+          { text: "24/7 Support for P1, P2 & P3 issues", included: true },
+          { text: "Multi Channel support e.g. email, chat, and phone etc.", included: true },
+          { text: "Technical Expert's Support for Advanced Product Knowledge", included: true },
+          { text: "Technical Account Manager", included: true },
+          { text: "Operational Health Review", included: true },
+          { text: "Customer Aware Support & Trainings", included: true }
+        ]
+      }
+    ]
+  },
+
+  supportPlans: {
+  heading: "Relax More With",
+  subheading: "Authsoriser's Value Added Services",
+  description: "While Google provides foundational support, Authsoriser takes it a step further by offering comprehensive managed services to optimize, maintain, and fully enhance your Google Workspace environment for maximum productivity and seamless collaboration.",
+  plans: [
+      {
+        title: "24/7 User Support",
+       
+        features: [
+          {
+            text: "Authsoriser brings a unified support experience of People, Process and Platform, ensuring seamless operations.",
+            included: true
+          },
+          {
+            text: "Get quick access to Google Certified specialists who have the expertise and abilities to fix issues",
+            included: true
+          },
+          {
+            text: "Get help in Resolving incidents, finding root causes, modifying workflows, providing incident reports etc.",
+            included: true
+          },
+        ]
+      },
+      {
+        title: "Admin As Service",
+       
+        features: [
+          {
+            text: "Relax while you outsource Google Workspace maintenance and optimization tasks to the experts at Authsoriser.",
+            included: true
+          },
+          {
+            text: "Periodic health checks to detect and eliminate performance and security bottlenecks.",
+            included: true
+          },
+          {
+            text: "Maintenance of Shared drive lifecycles, Endpoint configuration, Multi Factor Authentication",
+            included: true
+          }
+        ]
+      },
+      {
+        title: "Automation as Service",
+       
+        features: [
+          {
+            text: "Achieve Google Workspace improvements through customizations, integrations, and automated workflow processes.",
+            included: true
+          },
+          {
+            text: "Manage developers and users and govern apps and data for the entire organisation",
+            included: true
+          },
+          {
+            text: "Enable productivity for Admins & Users without compromising Security",
+            included: true
+          },
+        ]
+      }
+    ]
+  },
+
+
+    sliderTitle: "Why Choose Authsoriser as",
+    sliderSubTitle: "Your Partner ?",
+    slider: [
+      {
+        image: "/assets/images/googlecloud.png",
+          title: "Expert Guidance",
+          description: "Our team of certified Google Cloud professionals offers deep expertise in cost management strategies and best practices."
+        },
+        {
+          image: "/assets/images/smartworkspace.png",
+          title: "Customized Solutions",
+          description: "We tailor our approach to your unique business needs, providing customized solutions that maximize efficiency and minimize costs."
+        },
+        {
+          image: "/assets/images/realtime.png",
+          title: "Comprehensive Support",
+          description: "From initial assessment to implementation and ongoing support, Authsoriser.ai is your dedicated partner in achieving cost-effective cloud operations."
+        }
+      ],
+    
+    cta: {
+      title: "Ready to Scale Your",
+      subtitle: "Business with Authsoriser ?",
+      description: [
+        "When you need to scale your business, working with a managed service provider like Authsoriser can make all the difference. Authsoriser offers the expertise and experience to help you scale your resources, overcome challenges, and stay competitive.",
+        "Contact us today to learn more about our managed services and how we can help your organization thrive."
+      ],
+      buttonText: "Schedule a Consultation",
+      buttonLink: "/contact"
+    }
   }
+
+
 };

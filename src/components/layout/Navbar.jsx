@@ -24,6 +24,8 @@ const Navbar = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
+    // Also close any open dropdowns when changing routes
+    setActiveDropdown(null);
   }, [location]);
 
   // Handle clicks outside to close dropdown
@@ -31,9 +33,10 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       // Check if we clicked on a dropdown item/link
       const isDropdownContent = event.target.closest('.dropdown-content');
+      const isDropdownTrigger = event.target.closest('.dropdown-trigger');
       
-      // Don't close if we clicked inside dropdown content
-      if (activeDropdown && !isDropdownContent) {
+      // Close if we clicked outside dropdown content and trigger
+      if (activeDropdown && !isDropdownContent && !isDropdownTrigger) {
         setActiveDropdown(null);
       }
     };
@@ -48,11 +51,16 @@ const Navbar = () => {
     };
   }, [activeDropdown]);
 
-  const toggleDropdown = (dropdown, event) => {
-    // This prevents the document click handler from immediately closing the dropdown
-    if (event) {
-      event.stopPropagation();
-    }
+  const handleMouseEnter = (dropdown) => {
+    setActiveDropdown(dropdown);
+  };
+  
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
+
+  // For mobile menu toggle (click behavior)
+  const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
@@ -80,10 +88,13 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-8">
             {/* Google Cloud Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative group" 
+              onMouseEnter={() => handleMouseEnter('googleCloud')} 
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={(e) => toggleDropdown('googleCloud', e)}
-                className={`inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+                className={`dropdown-trigger inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
               >
                 Google Cloud
                 <svg
@@ -100,21 +111,25 @@ const Navbar = () => {
                 </svg>
               </button>
               {activeDropdown === 'googleCloud' && (
-                <div className="dropdown-content absolute left-0 mt-4 w-72 rounded-md shadow-lg bg-white ring-1 ring-gray-200 z-50 overflow-hidden transition-all duration-200 ease-in transform opacity-100 scale-100">
-                  <div className="py-3 px-4">
-                    <div className="border-b border-gray-200 pb-2 mb-3">
-                      <h3 className="text-lg font-semibold text-black">Google Cloud</h3>
-                    </div>
-                    <div className="space-y-1">
-                      {navData.googleCloud.items.map((item) => (
-                        <Link
-                          key={item.id}
-                          to={item.path}
-                          className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
-                        >
-                          <span className="font-medium">{item.label}</span>
-                        </Link>
-                      ))}
+                <div className="absolute left-0 top-full w-72 z-50">
+                  {/* Invisible bridge to prevent hover gap issues */}
+                  <div className="h-3 w-full bg-transparent"></div>
+                  <div className="dropdown-content rounded-md shadow-lg bg-white ring-1 ring-gray-200 overflow-hidden">
+                    <div className="py-3 px-4">
+                      <div className="border-b border-gray-200 pb-2 mb-3">
+                        <h3 className="text-lg font-semibold text-black">Google Cloud</h3>
+                      </div>
+                      <div className="space-y-1">
+                        {navData.googleCloud.items.map((item) => (
+                          <Link
+                            key={item.id}
+                            to={item.path}
+                            className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
+                          >
+                            <span className="font-medium">{item.label}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -122,10 +137,13 @@ const Navbar = () => {
             </div>
 
             {/* Google Workspace Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter('googleWorkspace')} 
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={(e) => toggleDropdown('googleWorkspace', e)}
-                className={`inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+                className={`dropdown-trigger inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
               >
                 Google Workspace
                 <svg
@@ -142,21 +160,25 @@ const Navbar = () => {
                 </svg>
               </button>
               {activeDropdown === 'googleWorkspace' && (
-                <div className="dropdown-content absolute left-0 mt-4 w-72 rounded-md shadow-lg bg-white ring-1 ring-gray-200 z-50 overflow-hidden transition-all duration-200 ease-in transform opacity-100 scale-100">
-                  <div className="py-3 px-4">
-                    <div className="border-b border-gray-200 pb-2 mb-3">
-                      <h3 className="text-lg font-semibold text-black">Google Workspace</h3>
-                    </div>
-                    <div className="space-y-1">
-                      {navData.googleWorkspace.items.map((item) => (
-                        <Link
-                          key={item.id}
-                          to={item.path}
-                          className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
-                        >
-                          <span className="font-medium">{item.label}</span>
-                        </Link>
-                      ))}
+                <div className="absolute left-0 top-full w-72 z-50">
+                  {/* Invisible bridge to prevent hover gap issues */}
+                  <div className="h-3 w-full bg-transparent"></div>
+                  <div className="dropdown-content rounded-md shadow-lg bg-white ring-1 ring-gray-200 overflow-hidden">
+                    <div className="py-3 px-4">
+                      <div className="border-b border-gray-200 pb-2 mb-3">
+                        <h3 className="text-lg font-semibold text-black">Google Workspace</h3>
+                      </div>
+                      <div className="space-y-1">
+                        {navData.googleWorkspace.items.map((item) => (
+                          <Link
+                            key={item.id}
+                            to={item.path}
+                            className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
+                          >
+                            <span className="font-medium">{item.label}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,10 +186,13 @@ const Navbar = () => {
             </div>
 
             {/* AI & ML Services Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter('aimlServices')} 
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={(e) => toggleDropdown('aimlServices', e)}
-                className={`inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+                className={`dropdown-trigger inline-flex items-center font-medium ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
               >
                 AI & ML Services
                 <svg
@@ -184,21 +209,25 @@ const Navbar = () => {
                 </svg>
               </button>
               {activeDropdown === 'aimlServices' && (
-                <div className="dropdown-content absolute left-0 mt-4 w-72 rounded-md shadow-lg bg-white ring-1 ring-gray-200 z-50 overflow-hidden transition-all duration-200 ease-in transform opacity-100 scale-100">
-                  <div className="py-3 px-4">
-                    <div className="border-b border-gray-200 pb-2 mb-3">
-                      <h3 className="text-lg font-semibold text-black">AI & ML Services</h3>
-                    </div>
-                    <div className="space-y-1">
-                      {navData.aimlServices.items.map((item) => (
-                        <Link
-                          key={item.id}
-                          to={item.path}
-                          className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
-                        >
-                          <span className="font-medium">{item.label}</span>
-                        </Link>
-                      ))}
+                <div className="absolute left-0 top-full w-72 z-50">
+                  {/* Invisible bridge to prevent hover gap issues */}
+                  <div className="h-3 w-full bg-transparent"></div>
+                  <div className="dropdown-content rounded-md shadow-lg bg-white ring-1 ring-gray-200 overflow-hidden">
+                    <div className="py-3 px-4">
+                      <div className="border-b border-gray-200 pb-2 mb-3">
+                        <h3 className="text-lg font-semibold text-black">AI & ML Services</h3>
+                      </div>
+                      <div className="space-y-1">
+                        {navData.aimlServices.items.map((item) => (
+                          <Link
+                            key={item.id}
+                            to={item.path}
+                            className="flex items-center px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-100 hover:text-black rounded-md transition-all duration-200"
+                          >
+                            <span className="font-medium">{item.label}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
