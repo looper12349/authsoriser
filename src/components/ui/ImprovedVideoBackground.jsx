@@ -113,6 +113,23 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   
+  // Explicitly handle video source changes
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    
+    // Reset video state when source changes
+    setIsLoading(true);
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+    
+    // Force reload by updating the src attribute
+    video.src = videoSrc;
+    video.load(); // Explicitly tell the browser to load the new source
+  }, [videoSrc]);
+
   // Setup video and canvas
   useEffect(() => {
     const video = videoRef.current;
@@ -164,7 +181,7 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
       video.removeEventListener('loadeddata', handleVideoLoad);
       video.removeEventListener('error', handleVideoError);
     };
-  }, [videoSrc]);
+  }, []);
   
   // Handle play/pause toggle
   useEffect(() => {
@@ -212,32 +229,23 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
   
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Hidden video source */}
-      <video
+      {/* Hidden video element (used as source for canvas) */}
+      <video 
         ref={videoRef}
-        className="hidden"
-        autoPlay
+        poster={posterImage}
         loop
         playsInline
-        muted
-        poster={posterImage}
+        className="hidden"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
-      {/* Canvas for rendering video frames */}
-      <canvas
+      {/* Canvas for rendering the video */}
+      <canvas 
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      
-      {/* Loading indicator */}
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 z-20">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-600"></div>
-        </div>
-      )}
       
       {/* Content container */}
       <div className="absolute inset-0 flex items-center z-20">
@@ -248,8 +256,7 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
       
       {/* Video controls */}
       <div className="absolute bottom-6 right-6 flex space-x-4 z-30">
-
-      <button 
+        <button 
           onClick={togglePlay}
           className="p-2 rounded-full bg-black bg-opacity-60 text-white hover:bg-opacity-80 transition-all"
           aria-label={isPlaying ? "Pause" : "Play"}
