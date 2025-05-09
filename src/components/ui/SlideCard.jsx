@@ -50,13 +50,11 @@ const SlideCard = ({ image, title, description, path }) => {
       {isHovered && (
         <div 
           className={`absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] bg-black bg-opacity-85 rounded-lg p-5 flex flex-col justify-center items-center shadow-2xl border border-gray-700 transform transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-          style={{ maxHeight: '60%' }}
+          style={{ maxHeight: '80%' }}
         >
           <h3 className="text-xl font-bold text-white mb-3 animate-fadeInDown">{title}</h3>
           <p className="text-white text-center text-sm mb-4 animate-fadeInUp overflow-hidden">{description}</p>
-          <span className="inline-block px-4 py-2 border border-white rounded-md hover:bg-white hover:text-black transition-all duration-300 text-white transform hover:scale-105 hover:shadow-glow animate-fadeInUp">
-            Learn More
-          </span>
+          
         </div>
       )}
     </Link>
