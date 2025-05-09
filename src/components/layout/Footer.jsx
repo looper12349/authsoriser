@@ -229,22 +229,22 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Follow Authsoriser</h3>
             <ul className="space-y-3">
               <li>
-                <a href="https://cloud.google.com/find-a-partner/partner/authsoriser" className="text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://cloud.google.com/find-a-partner/partner/authsoriser" target='_blank' className="text-gray-300 hover:text-white text-sm transition-colors">
                   Google Partners
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com/company/authsoriser" className="text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://linkedin.com/company/authsoriser" target='_blank' className="text-gray-300 hover:text-white text-sm transition-colors">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://youtube.com/authsoriser" className="text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://youtube.com/authsoriser" target='_blank' className="text-gray-300 hover:text-white text-sm transition-colors">
                   YouTube
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/authsoriser" className="text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://instagram.com/authsoriser" target='_blank' className="text-gray-300 hover:text-white text-sm transition-colors">
                   Instagram
                 </a>
               </li>

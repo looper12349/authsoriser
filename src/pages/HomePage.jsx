@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { navData } from '../data/navData';
 import ImprovedVideoBackground from '../components/ui/ImprovedVideoBackground';
 import GradientRing from '../components/ui/GradientRing';
 import Slider from '../components/ui/Slider';
 import SlideCard from '../components/ui/SlideCard';
+import ServiceSection from '../components/ui/ServiceSection';
 
 const HomePage = () => {
   return (
@@ -72,184 +74,13 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      
+     
+     <ServiceSection />
 
-      {/* Slider with Cards Section - Full Width */}
-      <section className="py-16 bg-white">
-        {/* Full-width slider with white background */}
-        <div className="w-full">
-          <Slider
-            slides={[
-              <SlideCard
-                key="slide1"
-                image="/assets/images/googlecloud.png"
-                title="Google Cloud Migrations"
-                description="Move your infrastructure seamlessly to Google Cloud with our expert migration services. We ensure zero downtime and maximum efficiency."
-                path="/services/google-cloud-migrations"
-              />,
-              <SlideCard
-                key="slide2"
-                image="/assets/images/smartworkspace.png"
-                title="Smart Workspace"
-                description="Transform your workspace with Google's suite of collaboration tools. Boost productivity and enable team communication."
-                path="/services/smart-workspace"
-              />,
-              <SlideCard
-                key="slide3"
-                image="/assets/images/realtime.png"
-                title="Real-time Permission Insights"
-                description="Leverage the power of artificial intelligence to gain insights and automate processes for your business."
-                path="/services/real-time-permission-insights"
-              />
-            ]}
-            autoplaySpeed={6000}
-          />
-        </div>
-      </section>
+     
 
-      {/* Features Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        {/* Gradient rings with responsive sizing */}
-        <div className="hidden md:block">
-          <GradientRing 
-            position="right-0 top-1/2"
-            size="1000px"
-            thickness={10}
-            fromColor="red-200"
-            toColor="red-100"
-            opacity={70}
-            className="transform -translate-y-1/2"
-          />
-
-          <GradientRing 
-            position="left-0 top-0"
-            size="1000px"
-            thickness={10}
-            fromColor="red-200"
-            toColor="red-100"
-            opacity={60}
-          />
-
-          <GradientRing 
-            position="left-0 bottom-0"
-            size="1000px"
-            thickness={8}
-            fromColor="red-200"
-            toColor="red-100"
-            opacity={50}
-          />
-        </div>
-        
-        {/* Smaller rings for mobile */}
-        <div className="md:hidden">
-          <GradientRing 
-            position="right-0 top-1/2"
-            size="300px"
-            thickness={6}
-            fromColor="red-200"
-            toColor="red-100"
-            opacity={40}
-            className="transform -translate-y-1/2"
-          />
-          
-          <GradientRing 
-            position="left-0 bottom-0"
-            size="250px"
-            thickness={5}
-            fromColor="red-200"
-            toColor="red-100"
-            opacity={30}
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Transform your Tech Landscape</h2>
-            <p className="text-2xl text-red-600 font-medium max-w-3xl mx-auto">
-              Authsoriser's IT Services
-            </p>
-          </div>
-          
-          {/* Service cards with alternating layout */}
-          <div className="space-y-16 md:space-y-24">
-            {/* 24/7 Managed Services */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg rounded-2xl pl-8">
-              <div className="md:w-1/2 max-w-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">24/7 Managed Services</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Prevent downtime, Get more from technology, and Drive digital transformation with our range of Managed Services.
-                </p>
-                <Link 
-                  to="/services/managed-services" 
-                  className="text-red-600 hover:text-red-700 font-medium inline-flex items-center mt-4"
-                >
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-              </div>
-              <div className="md:w-1/2 max-w-lg">
-                <img 
-                  src="/assets/images/24-7-managed-service.png" 
-                  alt="24/7 Managed Services" 
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-            </div>
-            
-            {/* Cloud Optimization - Reversed layout */}
-            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 shadow-lg rounded-2xl  pr-8">
-              <div className="md:w-1/2 max-w-lg">
-                <img 
-                  src="/assets/images/cloud-optimization.png" 
-                  alt="Cloud Optimization" 
-                  className="w-full h-auto rounded-lg "
-                />
-              </div>
-              <div className="md:w-1/2 max-w-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Cloud Optimization</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  CSP is our unique approach to protect cloud environment wrt Cost, Security and Performance with Observability.
-                </p>
-                <Link 
-                  to="/services/cloud-optimization" 
-                  className="text-red-600 hover:text-red-700 font-medium inline-flex items-center mt-4"
-                >
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            
-            {/* Technical Enablement */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg rounded-2xl pl-8">
-              <div className="md:w-1/2 max-w-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Technical Enablement</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Get your team Google Cloud certified with our Experienced Trainers, 100+ hands-on labs & Capstone Projects.
-                </p>
-                <Link 
-                  to="/services/technical-enablement" 
-                  className="text-red-600 hover:text-red-700 font-medium inline-flex items-center mt-4"
-                >
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-              </div>
-              <div className="md:w-1/2 max-w-lg">
-                <img 
-                  src="/assets/images/technical-enablement.png" 
-                  alt="Technical Enablement" 
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Partners Section with Horizontal Scrolling - Contained in Box with Animation */}
       <section className="py-16 bg-white overflow-hidden">
