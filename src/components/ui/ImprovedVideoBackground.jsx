@@ -125,9 +125,18 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
       rafRef.current = null;
     }
     
+    // Set a timeout to ensure loading state isn't stuck
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false); // Force loading to end after 5 seconds maximum
+    }, 3000);
+    
     // Force reload by updating the src attribute
     video.src = videoSrc;
     video.load(); // Explicitly tell the browser to load the new source
+    
+    return () => {
+      clearTimeout(loadingTimeout); // Clean up the timeout
+    };
   }, [videoSrc]);
 
   // Setup video and canvas
@@ -162,8 +171,22 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
     };
     
     const handleVideoError = () => {
-      console.error('Video failed to load');
+      console.error('Video playback error');
       setIsLoading(false);
+      // Fallback to displaying a static image when video fails
+      const canvas = canvasRef.current;
+      if (canvas && posterImage) {
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.onload = () => {
+          canvas.width = canvas.clientWidth;
+          canvas.height = canvas.clientHeight;
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+        img.src = posterImage;
+      }
     };
     
     // Add video events
@@ -177,9 +200,15 @@ const ImprovedVideoBackground = ({ videoSrc, posterImage, children }) => {
     return () => {
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
       }
       video.removeEventListener('loadeddata', handleVideoLoad);
       video.removeEventListener('error', handleVideoError);
+      
+      // Clear video resources to prevent memory leaks
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
     };
   }, []);
   
